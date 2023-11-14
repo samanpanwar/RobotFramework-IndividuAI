@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.8 on darwin)" generated="20231113 20:24:38.549" rpa="false" schemaversion="4">
+<suite id="s1" name="IndividuAITestSuite" source="/Users/brandonyeoman/PycharmProjects/IndividuAITestSuite">
+<suite id="s1-s1" name="My-Ven" source="/Users/brandonyeoman/PycharmProjects/IndividuAITestSuite/my-ven">
+<suite id="s1-s1-s1" name="Test" source="/Users/brandonyeoman/PycharmProjects/IndividuAITestSuite/my-ven/test.robot">
+<test id="s1-s1-s1-t1" name="User Login" line="13">
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOME PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231113 20:24:38.677" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:3000/sign-in?redirect_url=http%3A%2F%2Flocalhost%3A3000%2F'.</msg>
+<status status="PASS" starttime="20231113 20:24:38.676" endtime="20231113 20:24:43.041"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231113 20:24:43.042" endtime="20231113 20:24:43.653"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/div/div/div[1]/h1</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231113 20:24:43.653" endtime="20231113 20:24:45.998"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Sign in</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231113 20:24:46.011" level="INFO">Current page contains text 'Sign in'.</msg>
+<status status="PASS" starttime="20231113 20:24:45.998" endtime="20231113 20:24:46.011"/>
+</kw>
+<status status="PASS" starttime="20231113 20:24:38.676" endtime="20231113 20:24:46.011"/>
+</kw>
+<kw name="Input Username">
+<arg>${USERNAME}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/div/div/div[2]/div[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231113 20:24:46.012" level="INFO">Clicking element 'xpath=/html/body/div[1]/div/div/div[2]/div[1]/button'.</msg>
+<status status="PASS" starttime="20231113 20:24:46.012" endtime="20231113 20:24:46.279"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="identifierId"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231113 20:24:46.279" endtime="20231113 20:24:48.412"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="identifierId"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231113 20:24:48.413" level="INFO">Typing text 'lolnerwolf@gmail.com' into text field 'xpath=//*[@id="identifierId"]'.</msg>
+<status status="PASS" starttime="20231113 20:24:48.412" endtime="20231113 20:24:48.493"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${button_xpath}</var>
+<arg>//*[@id="identifierNext"]/div/button/div[3]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231113 20:24:48.493" level="INFO">${button_xpath} = //*[@id="identifierNext"]/div/button/div[3]</msg>
+<status status="PASS" starttime="20231113 20:24:48.493" endtime="20231113 20:24:48.493"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${click_script}</var>
+<arg>var xpathResult = document.evaluate('${button_xpath}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null); if (xpathResult.singleNodeValue) { xpathResult.singleNodeValue.click(); } else { throw new Error('Element not found'); }</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231113 20:24:48.494" level="INFO">${click_script} = var xpathResult = document.evaluate('//*[@id="identifierNext"]/div/button/div[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null); if (xpathResult.singleNodeValue) { xpathResult.singleNode...</msg>
+<status status="PASS" starttime="20231113 20:24:48.493" endtime="20231113 20:24:48.494"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>${click_script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231113 20:24:48.494" level="INFO">Executing JavaScript:
+var xpathResult = document.evaluate('//*[@id="identifierNext"]/div/button/div[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null); if (xpathResult.singleNodeValue) { xpathResult.singleNodeValue.click(); } else { throw new Error('Element not found'); }
+Without any arguments.</msg>
+<status status="PASS" starttime="20231113 20:24:48.494" endtime="20231113 20:24:48.498"/>
+</kw>
+<status status="PASS" starttime="20231113 20:24:46.011" endtime="20231113 20:24:48.498"/>
+</kw>
+<kw name="Input Password">
+<arg>${PASSWORD}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]/div[1]/div/div[1]/input</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231113 20:24:48.499" endtime="20231113 20:24:50.676"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]/div[1]/div/div[1]/input</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231113 20:24:50.677" level="INFO">Typing text 'Web27b37!' into text field 'xpath=//*[@id="password"]/div[1]/div/div[1]/input'.</msg>
+<status status="PASS" starttime="20231113 20:24:50.676" endtime="20231113 20:24:50.717"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]/div[1]/div/div[1]/input</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231113 20:24:50.718" level="INFO">Sending key(s) ('ENTER',) to xpath=//*[@id="password"]/div[1]/div/div[1]/input element.</msg>
+<msg timestamp="20231113 20:24:50.998" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20231113 20:24:50.998" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20231113 20:24:50.717" endtime="20231113 20:24:51.035"/>
+</kw>
+<status status="PASS" starttime="20231113 20:24:48.499" endtime="20231113 20:24:51.035"/>
+</kw>
+<kw name="Verify Login Success">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/div[1]/div[2]/button[1]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231113 20:24:51.035" endtime="20231113 20:24:53.374"/>
+</kw>
+<status status="PASS" starttime="20231113 20:24:51.035" endtime="20231113 20:24:53.374"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231113 20:24:53.374" endtime="20231113 20:24:53.962"/>
+</kw>
+<status status="PASS" starttime="20231113 20:24:38.676" endtime="20231113 20:24:53.962"/>
+</test>
+<test id="s1-s1-s1-t2" name="Checkout Flow" line="21">
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOME PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231113 20:24:53.964" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:3000/sign-in?redirect_url=http%3A%2F%2Flocalhost%3A3000%2F'.</msg>
+<status status="PASS" starttime="20231113 20:24:53.963" endtime="20231113 20:24:56.779"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231113 20:24:56.779" endtime="20231113 20:24:57.389"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/div/div/div[1]/h1</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231113 20:24:57.389" endtime="20231113 20:24:59.428"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Sign in</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231113 20:24:59.434" level="INFO">Current page contains text 'Sign in'.</msg>
+<status status="PASS" starttime="20231113 20:24:59.429" endtime="20231113 20:24:59.434"/>
+</kw>
+<status status="PASS" starttime="20231113 20:24:53.963" endtime="20231113 20:24:59.434"/>
+</kw>
+<kw name="Input Username">
+<arg>${USERNAME}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/div/div/div[2]/div[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231113 20:24:59.436" level="INFO">Clicking element 'xpath=/html/body/div[1]/div/div/div[2]/div[1]/button'.</msg>
+<status status="PASS" starttime="20231113 20:24:59.436" endtime="20231113 20:24:59.717"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="identifierId"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231113 20:24:59.717" endtime="20231113 20:25:00.393"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="identifierId"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231113 20:25:00.394" level="INFO">Typing text 'lolnerwolf@gmail.com' into text field 'xpath=//*[@id="identifierId"]'.</msg>
+<status status="PASS" starttime="20231113 20:25:00.394" endtime="20231113 20:25:00.445"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${button_xpath}</var>
+<arg>//*[@id="identifierNext"]/div/button/div[3]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231113 20:25:00.446" level="INFO">${button_xpath} = //*[@id="identifierNext"]/div/button/div[3]</msg>
+<status status="PASS" starttime="20231113 20:25:00.446" endtime="20231113 20:25:00.446"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${click_script}</var>
+<arg>var xpathResult = document.evaluate('${button_xpath}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null); if (xpathResult.singleNodeValue) { xpathResult.singleNodeValue.click(); } else { throw new Error('Element not found'); }</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231113 20:25:00.446" level="INFO">${click_script} = var xpathResult = document.evaluate('//*[@id="identifierNext"]/div/button/div[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null); if (xpathResult.singleNodeValue) { xpathResult.singleNode...</msg>
+<status status="PASS" starttime="20231113 20:25:00.446" endtime="20231113 20:25:00.446"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>${click_script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231113 20:25:00.447" level="INFO">Executing JavaScript:
+var xpathResult = document.evaluate('//*[@id="identifierNext"]/div/button/div[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null); if (xpathResult.singleNodeValue) { xpathResult.singleNodeValue.click(); } else { throw new Error('Element not found'); }
+Without any arguments.</msg>
+<status status="PASS" starttime="20231113 20:25:00.446" endtime="20231113 20:25:00.451"/>
+</kw>
+<status status="PASS" starttime="20231113 20:24:59.435" endtime="20231113 20:25:00.451"/>
+</kw>
+<kw name="Input Password">
+<arg>${PASSWORD}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]/div[1]/div/div[1]/input</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231113 20:25:00.452" endtime="20231113 20:25:02.017"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]/div[1]/div/div[1]/input</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231113 20:25:02.017" level="INFO">Typing text 'Web27b37!' into text field 'xpath=//*[@id="password"]/div[1]/div/div[1]/input'.</msg>
+<status status="PASS" starttime="20231113 20:25:02.017" endtime="20231113 20:25:02.053"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]/div[1]/div/div[1]/input</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231113 20:25:02.054" level="INFO">Sending key(s) ('ENTER',) to xpath=//*[@id="password"]/div[1]/div/div[1]/input element.</msg>
+<msg timestamp="20231113 20:25:02.334" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20231113 20:25:02.334" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20231113 20:25:02.053" endtime="20231113 20:25:02.367"/>
+</kw>
+<status status="PASS" starttime="20231113 20:25:00.452" endtime="20231113 20:25:02.367"/>
+</kw>
+<kw name="Verify Login Success">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/div[1]/div[2]/button[1]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231113 20:25:02.368" endtime="20231113 20:25:04.709"/>
+</kw>
+<status status="PASS" starttime="20231113 20:25:02.368" endtime="20231113 20:25:04.710"/>
+</kw>
+<kw name="Click Upgrade button">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231113 20:25:09.715" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231113 20:25:04.710" endtime="20231113 20:25:09.717"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/div[1]/div[2]/button[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231113 20:25:09.721" level="INFO">Clicking element 'xpath=/html/body/div[1]/div[1]/div[2]/button[1]'.</msg>
+<status status="PASS" starttime="20231113 20:25:09.718" endtime="20231113 20:25:10.048"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231113 20:25:15.050" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231113 20:25:10.048" endtime="20231113 20:25:15.052"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${NONE}</arg>
+<arg>\\13</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231113 20:25:15.056" level="INFO">Sending key(s) ('\\13',) to page.</msg>
+<msg timestamp="20231113 20:25:15.056" level="INFO">Sending keys \13</msg>
+<status status="PASS" starttime="20231113 20:25:15.053" endtime="20231113 20:25:15.109"/>
+</kw>
+<status status="PASS" starttime="20231113 20:25:04.710" endtime="20231113 20:25:15.109"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231113 20:25:15.109" endtime="20231113 20:25:15.727"/>
+</kw>
+<status status="PASS" starttime="20231113 20:24:53.963" endtime="20231113 20:25:15.727"/>
+</test>
+<test id="s1-s1-s1-t3" name="Verify Default Personas" line="30">
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOME PAGE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231113 20:25:15.729" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:3000/sign-in?redirect_url=http%3A%2F%2Flocalhost%3A3000%2F'.</msg>
+<status status="PASS" starttime="20231113 20:25:15.728" endtime="20231113 20:25:19.031"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231113 20:25:19.031" endtime="20231113 20:25:19.627"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/div/div/div[1]/h1</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231113 20:25:19.628" endtime="20231113 20:25:22.443"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Sign in</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231113 20:25:22.448" level="INFO">Current page contains text 'Sign in'.</msg>
+<status status="PASS" starttime="20231113 20:25:22.443" endtime="20231113 20:25:22.448"/>
+</kw>
+<status status="PASS" starttime="20231113 20:25:15.728" endtime="20231113 20:25:22.448"/>
+</kw>
+<kw name="Input Username">
+<arg>${USERNAME}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/div/div/div[2]/div[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231113 20:25:22.449" level="INFO">Clicking element 'xpath=/html/body/div[1]/div/div/div[2]/div[1]/button'.</msg>
+<status status="PASS" starttime="20231113 20:25:22.449" endtime="20231113 20:25:22.721"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="identifierId"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231113 20:25:22.721" endtime="20231113 20:25:23.979"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="identifierId"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231113 20:25:24.053" level="INFO">Typing text 'lolnerwolf@gmail.com' into text field 'xpath=//*[@id="identifierId"]'.</msg>
+<status status="PASS" starttime="20231113 20:25:24.006" endtime="20231113 20:25:24.247"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${button_xpath}</var>
+<arg>//*[@id="identifierNext"]/div/button/div[3]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231113 20:25:24.247" level="INFO">${button_xpath} = //*[@id="identifierNext"]/div/button/div[3]</msg>
+<status status="PASS" starttime="20231113 20:25:24.247" endtime="20231113 20:25:24.247"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${click_script}</var>
+<arg>var xpathResult = document.evaluate('${button_xpath}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null); if (xpathResult.singleNodeValue) { xpathResult.singleNodeValue.click(); } else { throw new Error('Element not found'); }</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231113 20:25:24.247" level="INFO">${click_script} = var xpathResult = document.evaluate('//*[@id="identifierNext"]/div/button/div[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null); if (xpathResult.singleNodeValue) { xpathResult.singleNode...</msg>
+<status status="PASS" starttime="20231113 20:25:24.247" endtime="20231113 20:25:24.247"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>${click_script}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231113 20:25:24.249" level="INFO">Executing JavaScript:
+var xpathResult = document.evaluate('//*[@id="identifierNext"]/div/button/div[3]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null); if (xpathResult.singleNodeValue) { xpathResult.singleNodeValue.click(); } else { throw new Error('Element not found'); }
+Without any arguments.</msg>
+<status status="PASS" starttime="20231113 20:25:24.248" endtime="20231113 20:25:24.263"/>
+</kw>
+<status status="PASS" starttime="20231113 20:25:22.448" endtime="20231113 20:25:24.263"/>
+</kw>
+<kw name="Input Password">
+<arg>${PASSWORD}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]/div[1]/div/div[1]/input</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231113 20:25:24.264" endtime="20231113 20:25:26.441"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]/div[1]/div/div[1]/input</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231113 20:25:26.442" level="INFO">Typing text 'Web27b37!' into text field 'xpath=//*[@id="password"]/div[1]/div/div[1]/input'.</msg>
+<status status="PASS" starttime="20231113 20:25:26.441" endtime="20231113 20:25:26.482"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>xpath=//*[@id="password"]/div[1]/div/div[1]/input</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20231113 20:25:26.482" level="INFO">Sending key(s) ('ENTER',) to xpath=//*[@id="password"]/div[1]/div/div[1]/input element.</msg>
+<msg timestamp="20231113 20:25:26.767" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20231113 20:25:26.767" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20231113 20:25:26.482" endtime="20231113 20:25:26.802"/>
+</kw>
+<status status="PASS" starttime="20231113 20:25:24.263" endtime="20231113 20:25:26.802"/>
+</kw>
+<kw name="Verify Login Success">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/div[1]/div[2]/button[1]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231113 20:25:26.803" endtime="20231113 20:25:30.400"/>
+</kw>
+<status status="PASS" starttime="20231113 20:25:26.802" endtime="20231113 20:25:30.400"/>
+</kw>
+<kw name="Verify Finance Personas">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/main/div/div[2]/button[3]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231113 20:25:30.401" level="INFO">Clicking element 'xpath=/html/body/div[1]/main/div/div[2]/button[3]'.</msg>
+<status status="PASS" starttime="20231113 20:25:30.401" endtime="20231113 20:25:30.655"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231113 20:25:33.657" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231113 20:25:30.655" endtime="20231113 20:25:33.658"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Jim</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231113 20:25:33.669" level="INFO">Current page contains text 'Jim'.</msg>
+<status status="PASS" starttime="20231113 20:25:33.658" endtime="20231113 20:25:33.669"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Warren</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231113 20:25:33.673" level="INFO">Current page contains text 'Warren'.</msg>
+<status status="PASS" starttime="20231113 20:25:33.669" endtime="20231113 20:25:33.673"/>
+</kw>
+<status status="PASS" starttime="20231113 20:25:30.401" endtime="20231113 20:25:33.673"/>
+</kw>
+<kw name="Verify Technology Personas">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/main/div/div[2]/button[4]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231113 20:25:33.673" level="INFO">Clicking element 'xpath=/html/body/div[1]/main/div/div[2]/button[4]'.</msg>
+<status status="PASS" starttime="20231113 20:25:33.673" endtime="20231113 20:25:33.890"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231113 20:25:36.891" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231113 20:25:33.890" endtime="20231113 20:25:36.892"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Sundar</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231113 20:25:36.906" level="INFO">Current page contains text 'Sundar'.</msg>
+<status status="PASS" starttime="20231113 20:25:36.894" endtime="20231113 20:25:36.906"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Elon</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231113 20:25:36.913" level="INFO">Current page contains text 'Elon'.</msg>
+<status status="PASS" starttime="20231113 20:25:36.908" endtime="20231113 20:25:36.913"/>
+</kw>
+<status status="PASS" starttime="20231113 20:25:33.673" endtime="20231113 20:25:36.914"/>
+</kw>
+<kw name="Verify Business Personas">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/main/div/div[2]/button[5]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231113 20:25:36.915" level="INFO">Clicking element 'xpath=/html/body/div[1]/main/div/div[2]/button[5]'.</msg>
+<status status="PASS" starttime="20231113 20:25:36.914" endtime="20231113 20:25:37.136"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231113 20:25:40.138" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231113 20:25:37.136" endtime="20231113 20:25:40.139"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Mukesh</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231113 20:25:40.168" level="INFO">Current page contains text 'Mukesh'.</msg>
+<status status="PASS" starttime="20231113 20:25:40.140" endtime="20231113 20:25:40.168"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Gautam</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231113 20:25:40.175" level="INFO">Current page contains text 'Gautam'.</msg>
+<status status="PASS" starttime="20231113 20:25:40.168" endtime="20231113 20:25:40.175"/>
+</kw>
+<status status="PASS" starttime="20231113 20:25:36.914" endtime="20231113 20:25:40.176"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231113 20:25:40.176" endtime="20231113 20:25:40.742"/>
+</kw>
+<status status="PASS" starttime="20231113 20:25:15.728" endtime="20231113 20:25:40.742"/>
+</test>
+<doc>A test suite for testing some core regression tests for AI Chat App 'IndividuAI'.</doc>
+<status status="PASS" starttime="20231113 20:24:38.567" endtime="20231113 20:25:40.743"/>
+</suite>
+<status status="PASS" starttime="20231113 20:24:38.565" endtime="20231113 20:25:40.744"/>
+</suite>
+<status status="PASS" starttime="20231113 20:24:38.550" endtime="20231113 20:25:40.745"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="IndividuAITestSuite">IndividuAITestSuite</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="My-Ven">IndividuAITestSuite.My-Ven</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1-s1" name="Test">IndividuAITestSuite.My-Ven.Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
